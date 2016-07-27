@@ -3,4 +3,3 @@ install: ant deps
 jdk:
   - oraclejdk8
   - oraclejdk7
-
