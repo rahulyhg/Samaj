@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>ApplicationName</title>
+    </h:head>
+    <h:body>
+        <div class="Login">
+            <!-- image of application -->
+        </div>
+        <h:form>
+            <div class="form">
+                <label>Name </label>
+                <h:inputText id="UsernameS" maxlength="50"
+                             required="true" size="40"
+                             requiredMessage="Enter your name"
+                             value="" class="input">
+                </h:inputText>
+                    <br/>
+                            <!-- onblurr checks if the value given is an email or not -->
+                <label>Email </label>
+                <h:inputText id="EmaillUserS" size="40"
+                             onblur="" value="" 
+                             required="true" requiredMessage="Please enter a valid email "
+                             class="input">
+                             
+                </h:inputText>
+                    <br/>
+                <label>Password </label>
+                <h:inputSecret id="PaawordUS" size="40"
+                               value="" required="true"
+                               requiredMessage="Enter your password"
+                               onblur="" class="input">
+                            <!-- onblur checks if the password is null on not -->
+                </h:inputSecret>
+                    <br/>
+            </div>
+            <div class="buttonD">
+                <button class="buttn" type="reset" value="Reset" tabindex="1" onclick="" >  Reset   </button>
+                <h:commandButton class="buttn" tabindex="10" value="SignUp" action="">
+                    
+                </h:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
