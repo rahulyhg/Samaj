@@ -1,2 +1,2 @@
 # ApplicATion
-Social Application in Java and JSF 
+Social in Java and JSF 
