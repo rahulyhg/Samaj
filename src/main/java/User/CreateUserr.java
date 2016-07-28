@@ -53,7 +53,12 @@ public class CreateUserr implements remot {
     @Override
     public boolean checkUser(String emaill) {
         List<USERRinn> list = findAllUsers() ;
-        return list.stream().anyMatch((userr) -> (userr.getId().equalsIgnoreCase(emaill))) ;
+        for(USERRinn userr : list) {
+            if(userr.getId().equalsIgnoreCase(emaill)) {
+                return true ;
+            }
+        }
+        return false ;
     }
     
 }
