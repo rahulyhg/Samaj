@@ -5,9 +5,13 @@ import javax.inject.Named;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 @Named(value = "newUser")
-@RequestScoped
+@SessionScoped
 public class NewUser implements Serializable {
 
     /**
@@ -46,15 +50,32 @@ public class NewUser implements Serializable {
     @EJB
     private remot r ;
     
+/*    @ManagedProperty(value="#{login}")
+    private LoginB loginb ;
+    
+    public LoginB getLoginb() {
+        return this.loginb ;
+    }
+    
+    public void setLoginb(LoginB loginb) {
+        this.loginb = loginb ;
+    }
+    */
+    @Inject LoginB loginb ;
+    
     public String createUser() {
         if(r.checkUser(getEmaill())) {
-            return "notCreated" ;
+            return /*"notCreated"*/"" ;
         }
         r.createNewUser(getUser(), getEmaill(), getPasswordUser());
+        /*getLoginb()*/loginb.setEmaill(getEmaill());
+        /*getLoginb()*/loginb.setName(getUser());
+        
         this.setEmaill("");
         this.setPasswordUser("");
         this.setUser(""); 
-        return "created" ;
+        /*getLoginb()*/loginb.setIn(true);
+        return /*"created"*/"profill" ;
     }
     
 }
