@@ -1,76 +1,60 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Profile</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="Resources/cssMainB.css" ></link>
     </h:head>
     <h:body>
+        <header id="headerProfile">
+            <p class="nameA" >Application</p>
+        </header>
+        
+        <h:form>
+            <h:commandLink id="logou" value="Logout" action="#{login.logout()}" />
+        </h:form>
         <div>
-            <!-- Image of the user -->
-            <h:commandLink id="changeImage" onclick="" value="Change Image" />
+            <img id="image" class="left" src="/WebApplication6/NewServlet?emaill=#{login.emaill}" alt="#{login.name}" />
+            <h:outputText id="nameu" class="right" value="#{login.name}" />
             
-            <h:outputText id="nameu" class="right namepr" value="" />
-            <h:outputText id="detal" class="right" value="" />
+            <h:outputText id="detal" class="right" value="#{login.details}" />
         </div>
         <div>
-            <h:outputText id="rating" value="" />
+            <pre>Ratings :  </pre>
+            <h:outputText id="rating" value="0" />
         </div>
         
         <div class="simple-border">
-            <h:outputText id="about" value="" />
+            <h:outputText id="about" value="#{login.aboutYu}" />
         </div>
         
         <div>
-            <pre>Contacts : </pre>
-            <h:commandLink class="click-li" onclick="" value="edit"/>
+            <p>Contacts : </p>
+            
             <pre> Phone No  :  </pre>
-            <h:outputText id="phno" class="simple-border input" value="" rendered="true" />
-            <h:inputText id="phnoe" value="" rendered="false" required="true"
-                maxlength="12" size="40" >
-                <f:convertNumber/>
-                <f:ajax/>
-            </h:inputText>
+            <h:outputText id="phno" class="simple-border input" value="#{login.phoneNu}" rendered="true" />
+                <br/>
             <pre>Email :  </pre>
-            <h:outputText id="email" class="simple-border" value="" rendered="true" />
-            <h:inputText id="emaile" required="true" rendered="false" value=""
-                maxlength="40" >
-                <f:ajax/>
-            </h:inputText>
+            <h:outputText id="email" class="simple-border" value="#{login.emaill}" rendered="true" />
         </div>
         <div>
             <div class="left">
                 <pre> Likes : </pre>
-                <h:commandLink id="editl" class="click-li" onclick="" value="edit">
-                    <f:ajax/>
-                </h:commandLink>
                 <br/>
-                <h:outputText id="likes" class="simple-border" value="" rendered="true" />
-                <h:inputTextarea id="likeIn" cols="400" rows="20" value="" rendered="false">
-                    <f:ajax/>
-                </h:inputTextarea>
-                <h:commandLink id="likeS" class="click-li" action="" onclick="" value="okay" rendered="false">
-                    <f:ajax />
-                </h:commandLink>
+                <h:outputText id="likes" class="simple-border" value="#{login.likes}" rendered="true" />
             </div>
             
             <div class="right">
                 <pre> Dislikes : </pre>
-                <h:commandLink id="editd" class="click-li" onclick="" value="edit">
-                    <f:ajax/>
-                </h:commandLink>
                 <br/>
-                <h:outputText id="dislikes" class="simple-border" value="" rendered="true" />
-                <h:inputTextarea id="dislikein" cols="400" rows="20" value="" rendered="false">
-                    <f:ajax />
-                </h:inputTextarea>
-                <h:commandLink id="dislikeS" class="click-li" action="" onclick="" value="okay" rendered="false">
-                    <f:ajax />
-                </h:commandLink>
+                <h:outputText id="dislikes" class="simple-border" value="#{login.dislikes}" rendered="true" />
             </div>
             
         </div>
+        <footer></footer>
     </h:body>
 </html>
 
