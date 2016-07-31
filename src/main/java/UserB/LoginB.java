@@ -96,6 +96,14 @@ public class LoginB implements Serializable {
     public byte[] getImage() {
         return this.image ;
     }
+    
+    private boolean in ;
+    public void setIn(boolean in) {
+        this.in = in ;
+    }
+    public boolean getIn() {
+        return this.in ;
+    }
                              ////////////////////
     @EJB
     private remot1 r ;
@@ -103,6 +111,7 @@ public class LoginB implements Serializable {
     public String loginn() {
         if(r.getPassword(getEmaill()).equals(getPassword())) {
             this.setName(r.getName(getEmaill()));
+            this.setIn(true);
             this.setDetails(r.getDetaill(getEmaill()));
             this.setAboutYu(r.getAboutYu(getEmaill()));
             this.setEmaill(getEmaill());
@@ -131,6 +140,7 @@ public class LoginB implements Serializable {
         this.setDislikes(null);
         this.setPassword("");
         this.setPhoneNu(0);
+        this.setIn(false);
             
         return "index" ;
     }
