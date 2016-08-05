@@ -1,0 +1,80 @@
+/* 
+    Created on : 31 Jul, 2016, 4:49:55 PM
+    Author     : Harsh Vardhan Kumar
+*/
+body {
+    border-radius: 10% ;
+    font-size: small ;
+    margin: 10px 10px 10px auto ;
+    padding: 10px 10px 10px 10px ;
+}
+.Login{
+    
+}
+
+/*Buttons */
+
+.buttn{
+    background-color: #ffd573;
+    font-family: sans-serif Helvetica;
+    border-bottom: #ffffff thin ;
+    border-left: #ffffff thin ;
+    border-radius: 10% ;
+    border-right: #ffffff thin ;
+    border-top: #ffffff thin ;
+    border-width: thin ;
+    z-index: 1 ;
+    padding: 10px 10px 10px 10px ;
+    
+}
+
+.buttonD{
+    
+}
+
+/* forms */
+
+.form{
+    
+}
+
+/* Right aligned form for signin */
+
+.form-right{
+    float: right contour ;
+    padding: 10px 10px 10px 10px ;
+}
+/* inputText */
+.input{
+    
+}
+
+/* aligned left */
+.left{
+    
+}
+
+/* right aligned */
+.right{
+    
+}
+
+/* disply of deatils and others in simple border radd */
+.simple-border{
+    
+}
+#about{
+    
+}
+#detal{
+    
+}
+#nameu{
+    
+}
+#form-login{
+    
+}
+#image{
+    
+}
